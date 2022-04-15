@@ -1,7 +1,7 @@
 import pandas as pd 
 import nltk
 import os
-nltk.downloader.download('vader_lexicon')
+# nltk.downloader.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def extract_comments(poet_name):
