@@ -12,7 +12,7 @@ def find_similarity(input_text, corpus):
   texts_corpus = list(corpus.values())
 
   #remove the index 0 from the data loaded from the csv file
-  texts_corpus = [row[0] for row in texts_corpus]
+  texts_corpus = [str(row[0]) for row in texts_corpus]
   
   # print(texts_corpus)
 

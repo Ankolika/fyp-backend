@@ -110,14 +110,11 @@ def onSubmit():
             temp_obj['text'] = texts[fname][0]
             rec_text.append(temp_obj)
 
-
-        
         # response_obj['recommended_filename'] = file_name
         response_obj['recommended_files'] = rec_text
-        print(response_obj)
+        print(json.dumps(response_obj)[860:920])
+        return json.dumps(response_obj)
 
-        return response_obj
-    
     else:
         return response_obj
 
