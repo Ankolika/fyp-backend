@@ -1,6 +1,5 @@
 from cgi import test
 from extract_comments import extract_comments
-from extract_text import extract_text_images
 from find_similarity import find_similarity
 from flask import Flask, request,jsonify
 from flask_cors import CORS, cross_origin
