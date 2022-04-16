@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import json
 import ast
-
+import math
 # from flask import current_app
 # current_app.config['SERVER_NAME'] = 'localhost'   
 # with current_app.test_request_context():
@@ -105,15 +105,25 @@ def onSubmit():
         file_name = list(sorted_avg.keys())[:5]
         rec_text = []
         for fname in file_name:
+            # if(fname=='nikitagill_2'):
+            #     print(texts[fname][0])
+            #     print(type(texts[fname][0]))
             temp_obj = {}
             temp_obj['image'] = fname
-            temp_obj['text'] = texts[fname][0]
+            
+            if(type(texts[fname][0]) != float):
+                temp_obj['text'] = texts[fname][0]
+                
+            else:
+                temp_obj['text'] = ""
+                
+
             rec_text.append(temp_obj)
 
         # response_obj['recommended_filename'] = file_name
         response_obj['recommended_files'] = rec_text
-        print(json.dumps(response_obj)[860:920])
-        return json.dumps(response_obj)
+        # print(json.dumps(response_obj)[860:920])
+        return response_obj
 
     else:
         return response_obj
@@ -121,9 +131,3 @@ def onSubmit():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-
